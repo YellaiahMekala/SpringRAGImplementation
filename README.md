@@ -87,3 +87,29 @@ cd SpringRAGImplementation
 ```bash
 git clone [https://github.com/YellaiahMekala/SpringRAGImplementation.git](https://github.com/YellaiahMekala/SpringRAGImplementation.git)
 cd SpringRAGImplementation
+
+
+## 📁 Repository Structure
+
+SpringRAGImplementation/
+├── docker/
+│   ├── docker-compose.yml              # PostgreSQL + pgvector & Ollama services
+│   └── init-pgvector.sql               # Extension setup and vector table DDL
+├── src/
+│   ├── main/
+│   │   ├── java/com/example/rag/
+│   │   │   ├── config/                 # VectorStore, EmbeddingModel & ChatClient Beans
+│   │   │   ├── controller/             # REST Endpoints (Ingestion, Search, Chat, RAG)
+│   │   │   ├── dto/                    # Strongly-typed Records for Query/Response
+│   │   │   ├── functions/              # LLM Tools / @Bean Function calling hooks
+│   │   │   ├── pipeline/               # Document Readers, TokenTextSplitter & ETL Loaders
+│   │   │   ├── service/                # RAG Orchestration, Advisor Chains & Search Service
+│   │   │   └── SpringRagApplication.java
+│   │   └── resources/
+│   │       ├── application.yml         # Application profiles & AI model configurations
+│   │       ├── documents/              # Sample PDFs, Markdown, and JSON data for ingestion
+│   │       └── prompts/                # External prompt templates (.st files)
+├── pom.xml
+└── README.md
+
+
