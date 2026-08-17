@@ -179,6 +179,8 @@ GET /api/v1/rag/stream?question=Summarize section 4 of the compliance document
 ```
 Here is the detailed architecture diagram for the RAG flow and implementation of  "Enterprise Spring RAG Implementation" project.
 
+This diagram illustrates the separation between the Batch Ingestion (ETL) Flow and the Online Inference and Implementation Flow, highlighting how Spring AI orchestrates key components like the PGVector store, LLMs, persistent Chat Memory, and Agentic Tool Calling
+
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/9db4eb18-95ca-40d0-959d-b92d87e468f5" />
 
 
