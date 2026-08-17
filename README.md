@@ -67,6 +67,7 @@ This repository provides industry-standard implementations for document ingestio
 
 ### 1. Clone the Repository
 ```bash
+
 git clone [https://github.com/YellaiahMekala/SpringRAGImplementation.git](https://github.com/YellaiahMekala/SpringRAGImplementation.git)
 cd SpringRAGImplementation
 
@@ -111,5 +112,81 @@ SpringRAGImplementation/
 │   │       └── prompts/                # External prompt templates (.st files)
 ├── pom.xml
 └── README.md
+
+
+2. Launch Local Vector Database
+Start PostgreSQL with the pgvector extension enabled:
+
+
+Bash
+docker-compose -f docker/docker-compose.yml up -d
+3. Set Up API Keys & Environment Variables
+Bash
+# macOS / Linux
+export OPENAI_API_KEY="your-actual-openai-api-key"
+
+
+# Windows (PowerShell)
+$env:OPENAI_API_KEY="your-actual-openai-api-key"
+4. Build and Run the Service
+Bash
+mvn clean package -DskipTests
+mvn spring-boot:run
+The application will start on http://localhost:8080.
+
+🧪 Key REST API Endpoints & Testing
+
+1. Ingest Documents into Vector Store (ETL)
+POST /api/v1/rag/ingest
+
+Bash
+curl -X POST http://localhost:8080/api/v1/rag/ingest \
+  -H "Content-Type: application/json" \
+  -d '{
+    "documentPath": "documents/enterprise-policy.pdf",
+    "category": "policy",
+    "tenantId": "tenant-001"
+  }'
+
+
+2. Similarity Vector Search (Semantic Query)
+POST /api/v1/rag/search
+
+Bash
+curl -X POST http://localhost:8080/api/v1/rag/search \
+  -H "Content-Type: application/json" \
+  -d '{
+    "query": "What are the reimbursement guidelines?",
+    "topK": 3,
+    "similarityThreshold": 0.75
+  }'
+
+
+3. Context-Augmented Q&A (RAG Ask)
+POST /api/v1/rag/ask
+
+Bash
+curl -X POST http://localhost:8080/api/v1/rag/ask \
+  -H "Content-Type: application/json" \
+  -d '{
+    "question": "What is the maximum claim amount for international travel?"
+  }'
+
+
+4. Reactive Streaming RAG Response (SSE)
+GET /api/v1/rag/stream?question=Summarize section 4 of the compliance document
+
+```
+
+***
+
+👨‍💻 Author
+Yellaiah Mekala
+
+Java Full-Stack & AI Backend Integration Engineer
+
+GitHub: @YellaiahMekala - https://www.google.com/search?q=https://github.com/YellaiahMekala
+
+LinkedIn: @Yellaiah Mekala - https://www.linkedin.com/in/yellaiah-mekala/
 
 
