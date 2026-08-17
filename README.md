@@ -51,4 +51,39 @@ This repository provides industry-standard implementations for document ingestio
 
 ---
 
-## 📁 Repository Structure
+
+---
+
+## ⚙️ Prerequisites
+
+- **Java Development Kit (JDK 17 or 21)**
+- **Apache Maven 3.8+**
+- **Docker Desktop** (for running PostgreSQL with `pgvector` and Ollama)
+- **OpenAI API Key** *(Optional if running fully local models via Ollama)*
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/YellaiahMekala/SpringRAGImplementation.git](https://github.com/YellaiahMekala/SpringRAGImplementation.git)
+cd SpringRAGImplementation
+
+---
+
+## ⚙️ Prerequisites
+
+- **Java Development Kit (JDK 17 or 21)**
+- **Apache Maven 3.8+**
+- **Docker Desktop** (for running PostgreSQL with `pgvector` and Ollama)
+- **OpenAI API Key** *(Optional if running fully local models via Ollama)*
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/YellaiahMekala/SpringRAGImplementation.git](https://github.com/YellaiahMekala/SpringRAGImplementation.git)
+cd SpringRAGImplementation
