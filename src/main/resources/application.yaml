@@ -4,18 +4,35 @@ spring:
 
   ai:
     openai:
-      api-key: # Replace this with your actual OpenAI API Key string
+      api-key:
       chat:
         memory:
           repository:
             jdbc:
-              initialize-schema: ALWAYS
+              initialize-schema: NEVER
+
+    vectorstore:
+        qdrant:
+          initialize-schema: true
+          host: localhost
+          port: 6334
+          collection-name: java
+
+
+  docker:
+    compose:
+      stop:
+        command: DOWN
 
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
     driver-class-name: org.h2.Driver
     username: yell
     password: yell123
+
+    sql:
+      init:
+        mode: always
 
   h2:
     console:
