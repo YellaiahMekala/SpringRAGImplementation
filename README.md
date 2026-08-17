@@ -177,6 +177,10 @@ curl -X POST http://localhost:8080/api/v1/rag/ask \
 GET /api/v1/rag/stream?question=Summarize section 4 of the compliance document
 
 ```
+Here is the detailed architecture diagram for the RAG flow and implementation of  "Enterprise Spring RAG Implementation" project.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/9db4eb18-95ca-40d0-959d-b92d87e468f5" />
+
 
 ***
 
@@ -185,7 +189,7 @@ Yellaiah Mekala
 
 Java Full-Stack & AI Backend Integration Engineer
 
-GitHub: @YellaiahMekala - https://www.google.com/search?q=https://github.com/YellaiahMekala
+GitHub: @YellaiahMekala - https://github.com/YellaiahMekala
 
 LinkedIn: @Yellaiah Mekala - https://www.linkedin.com/in/yellaiah-mekala/
 
